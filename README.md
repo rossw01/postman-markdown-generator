@@ -25,6 +25,7 @@ This will generate a markdown file named ```README.md```
 Keep in mind, the headings for everything can be customized, e.g. ```End-point: DeleteUser``` can be changed to just ```DeleteUser```
 
 
-![image](https://github.com/rossw01/postman-markdown-generator/assets/56947241/bbacee40-018a-485d-9e0d-929782f8c428)
+![image](https://github.com/rossw01/postman-markdown-generator/assets/56947241/f1a471d2-4437-4742-a74e-5b25ae0a7433)
+
 
 
