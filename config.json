@@ -1,0 +1,16 @@
+{
+  "endpoint-name": "## End-point: {}",
+  "endpoint-description": "{}",
+  "endpoint-method": "#### Method: {}",
+  "endpoint-url": ">```\n>{}\n>```",
+  "endpoint-body-format": "#### Body(**{}**)",
+  "endpoint-body": "```{}\n{}\n```",
+  "use-method-image": true,
+  "get-image-url": "https://i.imgur.com/EM0n9ms.png",
+  "put-image-url": "https://i.imgur.com/c32fs7n.png",
+  "delete-image-url": "https://i.imgur.com/kpUiCCt.png",
+  "post-image-url": "https://i.imgur.com/RSexnGX.png",
+  "options-image-url": "https://i.imgur.com/Oz7Fxtv.png",
+  "patch-image-url": "https://i.imgur.com/ptO2g5s.png",
+  "head-image-url": "https://i.imgur.com/GbCxt6z.png"
+}
