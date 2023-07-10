@@ -24,6 +24,8 @@ This will generate a markdown file named ```README.md```
 ## Example Markdown Output
 Keep in mind, the headings for everything can be customized, e.g. ```End-point: DeleteUser``` can be changed to just ```DeleteUser```
 
+[You can also see a real example here from one of my own projects.](https://github.com/rossw01/GinMoviesList/blob/master/README.md)
+
 
 ![image](https://github.com/rossw01/postman-markdown-generator/assets/56947241/f1a471d2-4437-4742-a74e-5b25ae0a7433)
 
