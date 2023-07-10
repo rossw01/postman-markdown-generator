@@ -36,6 +36,7 @@ func parseData(inputPath string, outputPath string) {
 func buildMarkdownFile(documentation models.Documentation, outputPath string) {
 	var config models.Config
 	var err error
+	utils.InitialiseConfig()
 	config, err = utils.LoadConfig(config)
 	if err != nil {
 		return
@@ -44,33 +45,32 @@ func buildMarkdownFile(documentation models.Documentation, outputPath string) {
 	var outputCollectionContents = func(collection models.Collection) {
 		for _, endpoint := range collection.Item {
 			// INFO
-			utils.WriteToFile(outputPath, strings.Replace(config.EndpointName, "{}", endpoint.Name, 1)) // Name
+			utils.WriteToFile(outputPath, strings.Replace(config.EndpointName, "{}", endpoint.Name, 1))                       // Name
+			utils.WriteToFile(outputPath, strings.Replace(config.EndpointDescription, "{}", endpoint.Request.Description, 1)) // Description
 			if !config.UseMethodImage {
-				utils.WriteToFile(outputPath, strings.Replace(config.EndpointDescription, "{}", endpoint.Request.Description, 1)) // Description
-				utils.WriteToFile(outputPath, strings.Replace(config.EndpointMethod, "{}", endpoint.Request.Method, 1))           // Request Type
+				utils.WriteToFile(outputPath, strings.Replace(config.EndpointMethod, "{}", endpoint.Request.Method, 1)) // Request Type
 			} else {
-				description := " " + strings.Replace(config.EndpointDescription, "{}", endpoint.Request.Description, 1)
 				switch endpoint.Request.Method {
 				case "PUT":
-					utils.WriteToFile(outputPath, fmt.Sprintf("![PUT Image](%s)", config.PutImageUrl)+description)
+					utils.WriteToFile(outputPath, fmt.Sprintf("\n![PUT Image](%s)", config.PutImageUrl))
 					break
 				case "POST":
-					utils.WriteToFile(outputPath, fmt.Sprintf("![POST Image](%s)", config.PostImageUrl)+description)
+					utils.WriteToFile(outputPath, fmt.Sprintf("\n![POST Image](%s)", config.PostImageUrl))
 					break
 				case "DELETE":
-					utils.WriteToFile(outputPath, fmt.Sprintf("![DELETE Image](%s)", config.DeleteImageUrl)+description)
+					utils.WriteToFile(outputPath, fmt.Sprintf("\n![DELETE Image](%s)", config.DeleteImageUrl))
 					break
 				case "GET":
-					utils.WriteToFile(outputPath, fmt.Sprintf("![GET Image](%s)", config.GetImageUrl)+description)
+					utils.WriteToFile(outputPath, fmt.Sprintf("\n![GET Image](%s)", config.GetImageUrl))
 					break
 				case "OPTIONS":
-					utils.WriteToFile(outputPath, fmt.Sprintf("![OPTIONS Image](%s)", config.OptionsImageUrl)+description)
+					utils.WriteToFile(outputPath, fmt.Sprintf("\n![OPTIONS Image](%s)", config.OptionsImageUrl))
 					break
 				case "HEAD":
-					utils.WriteToFile(outputPath, fmt.Sprintf("![HEAD Image](%s)", config.HeadImageUrl)+description)
+					utils.WriteToFile(outputPath, fmt.Sprintf("\n![HEAD Image](%s)", config.HeadImageUrl))
 					break
 				case "PATCH":
-					utils.WriteToFile(outputPath, fmt.Sprintf("![PATCH Image](%s)", config.PatchImageUrl)+description)
+					utils.WriteToFile(outputPath, fmt.Sprintf("\n![PATCH Image](%s)", config.PatchImageUrl))
 					break
 				}
 			}
