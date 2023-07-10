@@ -18,7 +18,7 @@ This will generate a markdown file named ```README.md```
 
 ## Customisation
 - When **pmdg** is first run, a config file is created in ```$HOME/.pmdg/config.json```
-- You can customize the markdown template for each property, keep in mind that '{}' will be replaced with the corresponding value when the tool is run.
+- You can customize the markdown template for each property, for each template ```{}``` will be replaced with the corresponding value when the tool is run.
 - ```use-method-image``` switches between using images/text to represent methods in the outputted .md file (see example output).
 
 ## Example Markdown Output
